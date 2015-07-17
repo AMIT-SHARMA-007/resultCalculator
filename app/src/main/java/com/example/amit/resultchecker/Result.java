@@ -27,7 +27,6 @@ public class Result extends Activity {
     private TextView temp[];
     private int credits[];
     private int noOfSubjects;
-    private EditText subjects[];
     private String grades[];
     private int gradess[];
     private double result;
@@ -58,7 +57,6 @@ public class Result extends Activity {
         LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         subs = extras.getStringArray("Subjects");
         credits = extras.getIntArray("Credits");
-        subjects = new EditText[noOfSubjects + 1];
         grades = new String[noOfSubjects];
         gradess = new int[noOfSubjects];
         welomeText = new TextView(this);
@@ -70,7 +68,6 @@ public class Result extends Activity {
         t1.setLayoutParams(lparams);
         l1.addView(t1);*/
         for (int i = 0; i <= noOfSubjects; i++) {
-            subjects[i] = new EditText(this);
             grad[i] = new Spinner(this);
             temp[i] = new TextView(this);
             if (i < noOfSubjects) {/*

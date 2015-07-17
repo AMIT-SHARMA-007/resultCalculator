@@ -25,7 +25,6 @@ public class Subjects extends Activity {
     private int credits[];
     private String subs[];
     private EditText subss[];
-    private EditText creditss[];
     private  int flag=0;
     private Spinner credt[];
     private List<String> credts;
@@ -51,22 +50,17 @@ public class Subjects extends Activity {
         l1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
         LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         subss = new EditText[noOfSubjects+1];
-        creditss = new EditText[noOfSubjects+1];
         credits = new int[noOfSubjects];
         credt = new Spinner[noOfSubjects+1];
         subs = new String[noOfSubjects];
         for (int i = 0; i <= noOfSubjects; i++) {
             subss[i] = new EditText(this);
-            creditss[i] = new EditText(this);
             credt[i] = new Spinner(this);
             if (i < noOfSubjects) {
                 subss[i].setLayoutParams(lparams);
-                creditss[i].setLayoutParams(lparams);
                 credt[i].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 credt[i].setAdapter(dataAdapter);
-                creditss[i].setInputType(InputType.TYPE_CLASS_NUMBER);
                 subss[i].setHint("Enter name of " + (i + 1) + " subject and credits below:");
-                creditss[i].setHint("Enter Credits of " + (i + 1) + "subject");
                 l1.addView(subss[i]);
             //    l1.addView(creditss[i]);
                 l1.addView(credt[i]);
